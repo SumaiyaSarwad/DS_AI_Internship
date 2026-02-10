@@ -1,0 +1,170 @@
+# RoboController 1.0 - Menu Driven Smart Navigation System
+
+# Robot name
+robot_name = st.text_input("Enter robot name: ")
+
+# ---------------- SOURCE SELECTION ----------------
+print("\nSelect Source Place:")
+print("1. Main Gate")
+print("2. Hostel")
+print("3. Parking")
+print("4. Block B")
+
+source_choice = int(input("Enter source number: "))
+
+if source_choice == 1:
+    source_place = "Main Gate"
+elif source_choice == 2:
+    source_place = "Hostel"
+elif source_choice == 3:
+    source_place = "Parking"
+elif source_choice == 4:
+    source_place = "Block B"
+else:
+    source_place = "Unknown"
+
+# ---------------- DESTINATION SELECTION ----------------
+print("\nSelect Destination Place:")
+print("1. Library")
+print("2. Canteen")
+print("3. Block A")
+print("4. Auditorium")
+
+dest_choice = int(input("Enter destination number: "))
+
+if dest_choice == 1:
+    destination_place = "Library"
+elif dest_choice == 2:
+    destination_place = "Canteen"
+elif dest_choice == 3:
+    destination_place = "Block A"
+elif dest_choice == 4:
+    destination_place = "Auditorium"
+else:
+    destination_place = "Unknown"
+
+# ---------------- AUTO DISTANCE DETECTION ----------------
+if source_place == "Main Gate" and destination_place == "Library":
+    distance = 120
+elif source_place == "Main Gate" and destination_place == "Auditorium":
+    distance = 180
+elif source_place == "Hostel" and destination_place == "Canteen":
+    distance = 300
+elif source_place == "Hostel" and destination_place == "Library":
+    distance = 350
+elif source_place == "Parking" and destination_place == "Block A":
+    distance = 200
+elif source_place == "Block B" and destination_place == "Auditorium":
+    distance = 250
+else:
+    distance = 100  # default distance
+
+# ---------------- CHECKPOINT NAMES ----------------
+cp1 = input("\nEnter name of Checkpoint 1: ")
+cp2 = input("Enter name of Checkpoint 2: ")
+cp3 = input("Enter name of Checkpoint 3: ")
+
+checkpoints = []
+
+# ---------------- OBSTACLE SELECTION ----------------
+print("\nSelect Obstacle Type:")
+print("1. Human")
+print("2. Animal")
+print("3. Vehicle")
+print("4. Wall")
+print("5. No Obstacle")
+
+obstacle_choice = int(input("Enter obstacle number: "))
+
+if obstacle_choice == 1:
+    obstacle = "human"
+elif obstacle_choice == 2:
+    obstacle = "animal"
+elif obstacle_choice == 3:
+    obstacle = "vehicle"
+elif obstacle_choice == 4:
+    obstacle = "wall"
+elif obstacle_choice == 5:
+    obstacle = "none"
+else:
+    obstacle = "unknown"
+
+print("\n--- Robot Decision System Started ---")
+
+# ---------------- DIRECTION DECISION ----------------
+if obstacle == "human":
+    print("Human detected! Choose direction carefully.")
+    print("1. Left  2. Right  3. Straight")
+    dir_choice = int(input("Enter direction number: "))
+    action = "Slow and Move Safely"
+
+elif obstacle == "animal":
+    print("Animal detected! Choose direction.")
+    print("1. Left  2. Right")
+    dir_choice = int(input("Enter direction number: "))
+    action = "Move Carefully"
+
+elif obstacle == "vehicle":
+    print("Vehicle detected! Choose direction.")
+    print("1. Left  2. Right  3. Straight")
+    dir_choice = int(input("Enter direction number: "))
+    action = "Change Path"
+
+elif obstacle == "wall":
+    print("Wall detected! Choose direction.")
+    print("1. Left  2. Right")
+    dir_choice = int(input("Enter direction number: "))
+    action = "Avoid Wall"
+
+else:
+    dir_choice = 3
+    action = "Move Forward"
+
+# ---------------- DIRECTION MAPPING ----------------
+if dir_choice == 1:
+    direction = "left"
+elif dir_choice == 2:
+    direction = "right"
+else:
+    direction = "straight"
+
+# ---------------- SPEED LOGIC ----------------
+if obstacle == "human":
+    speed = "Very Slow"
+elif direction == "straight":
+    speed = "Fast"
+else:
+    speed = "Slow"
+
+# ---------------- CHECKPOINT ALLOCATION ----------------
+if distance <= 50:
+    checkpoints.append(cp1)
+elif distance <= 100:
+    checkpoints.append(cp1)
+    checkpoints.append(cp2)
+else:
+    checkpoints.append(cp1)
+    checkpoints.append(cp2)
+    checkpoints.append(cp3)
+
+# ---------------- TRIP SUMMARY ----------------
+print("\n--- Trip Summary ---")
+print(f"Robot Name        : {robot_name}")
+print(f"Source Place     : {source_place}")
+print(f"Destination      : {destination_place}")
+print(f"Distance Covered : {distance} meters")
+print(f"Obstacle Type    : {obstacle}")
+print(f"Action Taken     : {action}")
+print(f"Direction Chosen : {direction}")
+print(f"Speed Mode       : {speed}")
+print(f"Checkpoints      : {checkpoints}")
+
+# ---------------- FINAL STATEMENT ----------------
+print("\n--- Final Statement ---")
+print(
+    f"The robot {robot_name} travelled {distance} meters from {source_place} to "
+    f"{destination_place} by changing its direction to {direction} "
+    f"while encountering a {obstacle} obstacle."
+)
+
+print("\n--- Robot Reached the Destination Successfully ---")

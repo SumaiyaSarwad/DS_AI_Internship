@@ -1,0 +1,3 @@
+Name: Sumaiya, Daily Goal: Finish Python file handling
+Name: Sumaiya, Daily Goal: Practice CSV and Excel handling
+Name: Sumaiya, Daily Goal: Revise append vs write modes
