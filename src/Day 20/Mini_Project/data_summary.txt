@@ -1,0 +1,95 @@
+===============================================================
+CUSTOMER DATASET CHARACTERISTICS REPORT
+===============================================================
+
+Total Rows: 505
+Total Columns: 14
+
+---------------------------------------------------------------
+COLUMN TYPES & MISSING VALUES
+---------------------------------------------------------------
+
+CustomerID           | int64    | Missing: 0 (0.0%)
+Age                  | int64    | Missing: 0 (0.0%)
+Gender               | object   | Missing: 0 (0.0%)
+City                 | object   | Missing: 0 (0.0%)
+Education            | object   | Missing: 25 (5.0%)
+MaritalStatus        | object   | Missing: 0 (0.0%)
+AnnualIncome         | float64  | Missing: 26 (5.1%)
+SpendingScore        | int64    | Missing: 0 (0.0%)
+YearsEmployed        | int64    | Missing: 0 (0.0%)
+PurchaseFrequency    | int64    | Missing: 0 (0.0%)
+OnlineVisitsPerMonth | int64    | Missing: 0 (0.0%)
+ReturnedItems        | int64    | Missing: 0 (0.0%)
+PreferredDevice      | object   | Missing: 0 (0.0%)
+LastPurchaseAmount   | int64    | Missing: 0 (0.0%)
+
+---------------------------------------------------------------
+BASIC STATISTICS (NUMERICAL COLUMNS)
+---------------------------------------------------------------
+
+Age:
+  Mean: 37.15
+  Std Dev: 9.72
+  Min: 21
+  Max: 54
+
+AnnualIncome:
+  Mean: 75,613
+  Std Dev: 39,070
+  Min: 383
+  Max: 419,963
+  Note: Extreme high-value outliers present.
+
+SpendingScore:
+  Mean: 46.44
+  Min: 5
+  Max: 95
+
+YearsEmployed:
+  Mean: 13.97
+  Min: 1
+  Max: 34
+
+PurchaseFrequency:
+  Mean: 11.94
+  Min: 1
+  Max: 24
+
+OnlineVisitsPerMonth:
+  Mean: 16.27
+  Min: 3
+  Max: 29
+
+ReturnedItems:
+  Mean: 1.92
+  Min: 0
+  Max: 4
+
+LastPurchaseAmount:
+  Mean: 2,814
+  Min: 518
+  Max: 4,996
+
+---------------------------------------------------------------
+DATA QUALITY CHECK
+---------------------------------------------------------------
+
+Duplicate Rows Found: 5
+Missing Values Present: Yes (Education, AnnualIncome)
+Income Outliers Present: Yes (values above 200,000)
+
+---------------------------------------------------------------
+OVERALL DATASET ASSESSMENT
+---------------------------------------------------------------
+
+The dataset is well-structured and suitable for exploratory
+data analysis and modeling. Minor preprocessing is required,
+including:
+
+• Handling missing values in Education and AnnualIncome
+• Removing duplicate records
+• Treating extreme income outliers
+
+Report Generated Successfully.
+===============================================================
