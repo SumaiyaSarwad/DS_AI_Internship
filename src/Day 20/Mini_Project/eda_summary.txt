@@ -1,0 +1,78 @@
+===============================================================
+MINI PROJECT 1 - EXPLORATORY DATA ANALYSIS REPORT
+===============================================================
+
+1. DATASET OVERVIEW
+------------------------------------------------------------
+Total Rows: 255
+Total Columns: 14
+
+2. MISSING VALUES
+------------------------------------------------------------
+CustomerID           | Missing: 0 (0.0%)
+Age                  | Missing: 0 (0.0%)
+Gender               | Missing: 0 (0.0%)
+City                 | Missing: 0 (0.0%)
+Education            | Missing: 12 (4.7%)
+MaritalStatus        | Missing: 0 (0.0%)
+AnnualIncome         | Missing: 12 (4.7%)
+SpendingScore        | Missing: 0 (0.0%)
+YearsEmployed        | Missing: 0 (0.0%)
+PurchaseFrequency    | Missing: 0 (0.0%)
+OnlineVisitsPerMonth | Missing: 0 (0.0%)
+ReturnedItems        | Missing: 0 (0.0%)
+PreferredDevice      | Missing: 0 (0.0%)
+LastPurchaseAmount   | Missing: 0 (0.0%)
+
+3. DUPLICATE CHECK
+------------------------------------------------------------
+Duplicate Rows Found: 5
+
+4. NUMERICAL SUMMARY STATISTICS
+------------------------------------------------------------
+        CustomerID         Age   AnnualIncome  SpendingScore  YearsEmployed  PurchaseFrequency  OnlineVisitsPerMonth  ReturnedItems  LastPurchaseAmount
+count   255.000000  255.000000     243.000000     255.000000     255.000000         255.000000            255.000000     255.000000           255.00000
+mean   1126.941176   37.729412   74499.901235      45.721569      14.682353          11.568627             16.078431       1.858824          2795.07451
+std      72.397256    9.767842   43939.855655      17.869522       9.651664           7.077899              7.909536       1.409917          1328.77241
+min    1001.000000   21.000000   16062.000000       5.000000       1.000000           1.000000              3.000000       0.000000           566.00000
+25%    1064.500000   29.000000   56353.000000      34.500000       6.000000           5.000000             10.000000       1.000000          1542.50000
+50%    1128.000000   38.000000   69629.000000      47.000000      15.000000          11.000000             16.000000       2.000000          2705.00000
+75%    1190.500000   46.000000   84030.500000      57.500000      23.000000          18.000000             23.000000       3.000000          4001.00000
+max    1250.000000   54.000000  474327.000000      95.000000      34.000000          24.000000             29.000000       4.000000          4996.00000
+
+5. OUTLIER ANALYSIS (IQR METHOD)
+------------------------------------------------------------
+CustomerID           | Outliers Detected: 0
+Age                  | Outliers Detected: 0
+AnnualIncome         | Outliers Detected: 5
+SpendingScore        | Outliers Detected: 1
+YearsEmployed        | Outliers Detected: 0
+PurchaseFrequency    | Outliers Detected: 0
+OnlineVisitsPerMonth | Outliers Detected: 0
+ReturnedItems        | Outliers Detected: 0
+LastPurchaseAmount   | Outliers Detected: 0
+
+6. CORRELATION ANALYSIS
+------------------------------------------------------------
+                      CustomerID       Age  AnnualIncome  SpendingScore  YearsEmployed  PurchaseFrequency  OnlineVisitsPerMonth  ReturnedItems  LastPurchaseAmount
+CustomerID              1.000000 -0.030988     -0.039902       0.052029      -0.011019          -0.079962             -0.021931       0.021826           -0.038018
+Age                    -0.030988  1.000000     -0.050496      -0.002351       0.974985           0.102801             -0.041306      -0.056243            0.076649
+AnnualIncome           -0.039902 -0.050496      1.000000      -0.388748      -0.053474          -0.040496              0.087949      -0.119454           -0.022091
+SpendingScore           0.052029 -0.002351     -0.388748       1.000000      -0.014257           0.006548             -0.085304       0.045469            0.024245
+YearsEmployed          -0.011019  0.974985     -0.053474      -0.014257       1.000000           0.070429             -0.056298      -0.054517            0.101763
+PurchaseFrequency      -0.079962  0.102801     -0.040496       0.006548       0.070429           1.000000             -0.045245       0.083035           -0.072105
+OnlineVisitsPerMonth   -0.021931 -0.041306      0.087949      -0.085304      -0.056298          -0.045245              1.000000      -0.059726            0.031448
+ReturnedItems           0.021826 -0.056243     -0.119454       0.045469      -0.054517           0.083035             -0.059726       1.000000            0.023263
+LastPurchaseAmount     -0.038018  0.076649     -0.022091       0.024245       0.101763          -0.072105              0.031448       0.023263            1.000000
+
+7. EXECUTIVE SUMMARY
+------------------------------------------------------------
+• Minor missing values observed in Education and AnnualIncome.
+• Presence of duplicate records requiring removal before modeling.
+• AnnualIncome contains extreme high-value outliers.
+• Weak overall correlation between income and spending behavior.
+• Dataset suitable for customer segmentation and behavioral analysis.
+
+===============================================================
+EDA Report Generated Successfully.
+===============================================================
